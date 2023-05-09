@@ -25,7 +25,7 @@ const Footer = () => {
           <GrFacebook />
         </a>
       </div>
-      <img src='/img/Logo.png' alt='Logo' />
+      <img src='img/Logo.png' alt='Logo' />
       <strong className='font-Mont'>
         Desarrollado por Retford O&#39;briam
       </strong>

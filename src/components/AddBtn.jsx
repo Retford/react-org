@@ -5,7 +5,7 @@ const AddBtn = ({ handleClick }) => {
         Mi Organización
       </h3>
       <img
-        src='/img/addButton.png'
+        src='img/addButton.png'
         alt='addButton'
         className='absolute right-[20%] cursor-pointer'
         onClick={handleClick}
