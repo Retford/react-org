@@ -1,4 +1,5 @@
 import { GrTrash } from 'react-icons/gr';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 const Card = ({
   enlace,
@@ -8,6 +9,8 @@ const Card = ({
   equipo,
   eliminarColaborador,
   id,
+  fav,
+  liked,
 }) => {
   return (
     <div className='rounded-xl relative w-[262px] h-[272px] bg-white mb-6'>
@@ -31,6 +34,18 @@ const Card = ({
         <h5 className='text-[#212121] text-base font-normal w-[200px]'>
           {puesto}
         </h5>
+        {fav ? (
+          <AiFillHeart
+            className='cursor-pointer'
+            color='red'
+            onClick={() => liked(id)}
+          />
+        ) : (
+          <AiOutlineHeart
+            className='cursor-pointer'
+            onClick={() => liked(id)}
+          />
+        )}
       </div>
     </div>
   );

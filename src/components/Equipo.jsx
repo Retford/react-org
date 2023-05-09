@@ -9,6 +9,7 @@ const Equipo = ({
   eliminarColaborador,
   actualizarColor,
   id,
+  liked,
 }) => {
   return (
     <>
@@ -31,7 +32,7 @@ const Equipo = ({
           </h3>
           <div className='flex mt-8 flex-wrap justify-evenly gap-6'>
             {colaboradores.map(
-              ({ id, enlace, nombre, puesto, equipo }, index) => (
+              ({ id, enlace, nombre, puesto, equipo, fav }, index) => (
                 <Card
                   key={index}
                   enlace={enlace}
@@ -41,6 +42,8 @@ const Equipo = ({
                   colorCard={colorCard}
                   id={id}
                   eliminarColaborador={eliminarColaborador}
+                  fav={fav}
+                  liked={liked}
                 />
               )
             )}

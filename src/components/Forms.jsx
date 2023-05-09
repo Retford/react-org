@@ -28,7 +28,7 @@ const Forms = ({ equipos, registrarColaborador, crearEquipo }) => {
   const [color, setColor] = useState('');
 
   return (
-    <section className='flex justify-evenly pt-[84px]'>
+    <section className='flex justify-evenly pt-[84px] flex-wrap'>
       <form
         onSubmit={manejarEnvio}
         className='bg-[#f6f6f6] flex flex-col max-w-[1121px] px-[95px] py-[35px] shadow-xl rounded-[20px]'
@@ -82,6 +82,7 @@ const Forms = ({ equipos, registrarColaborador, crearEquipo }) => {
             updateValue={setTitulo}
           />
           <Campos
+            type='color'
             titulo='Color'
             placeholder='Ingresar color en Hex...'
             required

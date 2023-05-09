@@ -15,6 +15,7 @@ const App = () => {
       equipo: 'Front End',
       nombre: 'Retford',
       puesto: 'Desarrollador Junior',
+      fav: true,
     },
     {
       id: uuid(),
@@ -22,6 +23,7 @@ const App = () => {
       equipo: 'Devops',
       nombre: 'Retford',
       puesto: 'Desarrollador Junior',
+      fav: false,
     },
     {
       id: uuid(),
@@ -29,6 +31,7 @@ const App = () => {
       equipo: 'Data Science',
       nombre: 'Retford',
       puesto: 'Desarrollador Junior',
+      fav: false,
     },
     {
       id: uuid(),
@@ -36,6 +39,7 @@ const App = () => {
       equipo: 'Front End',
       nombre: 'Retford',
       puesto: 'Desarrollador Junior',
+      fav: false,
     },
   ]);
   const [equipos, setEquipos] = useState([
@@ -116,6 +120,16 @@ const App = () => {
     setEquipos([...equipos, { ...nuevoEquipo, id: uuid() }]);
   };
 
+  const liked = (id) => {
+    const colaboradorFav = colaboradores.map((colaborador) => {
+      if (colaborador.id === id) {
+        colaborador.fav = !colaborador.fav;
+      }
+      return colaborador;
+    });
+    setColaboradores(colaboradorFav);
+  };
+
   return (
     <>
       <Header />
@@ -139,6 +153,7 @@ const App = () => {
           )}
           actualizarColor={actualizarColor}
           eliminarColaborador={eliminarColaborador}
+          liked={liked}
         />
       ))}
       <Footer />
